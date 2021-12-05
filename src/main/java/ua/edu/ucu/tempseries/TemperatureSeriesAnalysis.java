@@ -163,15 +163,15 @@ public class TemperatureSeriesAnalysis {
                 throw new InputMismatchException();
             }
         }
-        temperatureSeries = Arrays.copyOf(temperatureSeries, temps.length + temperatureSeries.length);
-
         int previousLength = temperatureSeries.length;
+        temperatureSeries = Arrays.copyOf(temperatureSeries, temps.length + previousLength);
+
         int j = 0;
         for (double temp : temps) {
             temperatureSeries[previousLength + j] = temp;
             j++;
         }
 
-        return temps.length + temperatureSeries.length;
+        return temperatureSeries.length;
     }
 }
