@@ -93,7 +93,7 @@ public class TemperatureSeriesAnalysisTest {
     @Test
     public void testFindTempClosestToZer() {
         // setup input data and expected result
-        double[] temperatureSeries = {0.2, -0.2};
+        double[] temperatureSeries = {-0.2, 0.2};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
         double expResult = 0.2;
 
@@ -133,7 +133,7 @@ public class TemperatureSeriesAnalysisTest {
         // setup input data and expected result
         double[] temperatureSeries = {3.0, -5.0, 1.0, 5.0};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-        double[] expResult = {-0.5};
+        double[] expResult = {-5.0};
 
         // call tested method
         double[] actualResult = seriesAnalysis.findTempsLessThen(0);
